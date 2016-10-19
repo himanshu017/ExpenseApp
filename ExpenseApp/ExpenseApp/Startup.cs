@@ -36,7 +36,6 @@ namespace ExpenseApp
                 Provider = new AuthorizationServerProvider(),
 
             };
-
             // Token Generation
             app.UseOAuthAuthorizationServer(OAuthServerOptions);
             app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions()
