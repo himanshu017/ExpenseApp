@@ -87,10 +87,10 @@
                                 <input type="email" class="form-control input-lg" ng-model="login.registrationData.userName" id="username" placeholder="Username" required>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control input-lg" ng-model="login.registrationData.password" id="password" placeholder="password">
+                                <input type="password" class="form-control input-lg" ng-model="login.registrationData.password" id="password" placeholder="password" required>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control input-lg" ng-model="login.registrationData.Confirmpassword" compare-to="login.registrationData.password" id="Confirmpassword" placeholder="Confirm Password" required>
+                                <input type="password" class="form-control input-lg" ng-model="login.registrationData.Confirmpassword" equalto="#password" id="Confirmpassword" required placeholder="Confirm Password" required>
                             </div>
                             <div class="checkbox m-bot15">
                                 <label>
@@ -115,7 +115,7 @@
         </div>
     </div>
 
-    <div class="container form-container"  ng-show="login.Type === 'P'">
+    <div class="container form-container" ng-show="login.Type === 'P'">
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
                 <div class="panel panel-default panel-more-shadow">
