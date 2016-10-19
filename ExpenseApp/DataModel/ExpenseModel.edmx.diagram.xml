@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2bdd28c62fd84376a067e29fd64b46d1" Name="Diagram1">
+        <EntityTypeShape EntityType="ExpenseAppModel.CategoryMaster" Width="1.5" PointX="7.75" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpenseAppModel.TransactionsMaster" Width="1.5" PointX="2.125" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpenseAppModel.UserLoginActivityMaster" Width="1.5" PointX="7.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpenseAppModel.UserMaster" Width="1.5" PointX="5.875" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExpenseAppModel.UserTypeMaster" Width="1.5" PointX="4" PointY="2.5" IsExpanded="true" />
+        <AssociationConnector Association="ExpenseAppModel.FK_CategoryMaster_UserMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpenseAppModel.FK_TransactionsMaster_CategoryMaster" ManuallyRouted="true" >
+          <ConnectorPoint PointX="7.75" PointY="2.3450682886555976" />
+          <ConnectorPoint PointX="7.4375" PointY="2.3450682886555976" />
+          <ConnectorPoint PointX="7.4375" PointY="0.5625" />
+          <ConnectorPoint PointX="5.896986179487179" PointY="0.56249999999999944" />
+          <ConnectorPoint PointX="5.7303195128205129" PointY="0.5625" />
+          <ConnectorPoint PointX="3.7719861794871794" PointY="0.56249999999999944" />
+          <ConnectorPoint PointX="3.6053195128205124" PointY="0.5625" />
+          <ConnectorPoint PointX="1.479166666666667" PointY="0.5625" />
+          <ConnectorPoint PointX="1.479166666666667" PointY="2.8600878906249996" />
+          <ConnectorPoint PointX="2.875" PointY="2.8600878906249996" />
+          <ConnectorPoint PointX="2.875" PointY="3" />
+        </AssociationConnector>
+        <AssociationConnector Association="ExpenseAppModel.FK_TransactionsMaster_UserMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpenseAppModel.FK_UserLoginActivityMaster_UserMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpenseAppModel.FK_UserMaster_UserTypeMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="ExpenseAppModel.FK_UserTypeMaster_UserMaster" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ExpenseAppModel.CountryMaster" Width="1.5" PointX="4" PointY="0.625" />
+        <EntityTypeShape EntityType="ExpenseAppModel.CurrenyMaster" Width="1.5" PointX="2.125" PointY="0.625" />
+        <AssociationConnector Association="ExpenseAppModel.FK_UserMaster_CountryMaster" />
+        <AssociationConnector Association="ExpenseAppModel.FK_TransactionsMaster_CurrenyMaster" />
+        <AssociationConnector Association="ExpenseAppModel.FK_UserMaster_CurrenyMaster" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

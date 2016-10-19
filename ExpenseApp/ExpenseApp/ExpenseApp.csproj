@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FF1BDC7C-2917-47F3-BF94-049B022FC4F9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExpenseApp</RootNamespace>
+    <AssemblyName>ExpenseApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ENCDEC">
+      <HintPath>..\..\..\Practice\AdminWD\Admin.Api\Admin.Api\bin\ENCDEC.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Diagnostics, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Diagnostics.3.0.1\lib\net45\Microsoft.Owin.Diagnostics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.HttpListener, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.HttpListener.3.0.1\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Hosting.3.0.1\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.SelfHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.SelfHost.5.2.3\lib\net45\System.Web.Http.SelfHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\angular-toastr.min.css" />
+    <Content Include="Login.html" />
+    <Content Include="css\lib\bootstrapvalidator\bootstrapvalidator.min.html" />
+    <Content Include="css\lib\bootstrap\bootstrap.css" />
+    <Content Include="css\lib\bootstrap_tour\bootstrap-tour.min.css" />
+    <Content Include="css\lib\c3\c3.css" />
+    <Content Include="css\lib\clockpicker\clockpicker.css" />
+    <Content Include="css\lib\datatables\datatables.css" />
+    <Content Include="css\lib\daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="css\lib\font-awesome\font-awesome.min.css" />
+    <Content Include="css\lib\fonts\glyphicons-halflings-regular-2.html" />
+    <Content Include="css\lib\fonts\glyphicons-halflings-regular-3.html" />
+    <Content Include="css\lib\fonts\glyphicons-halflings-regular-4.html" />
+    <Content Include="css\lib\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="css\lib\fonts\glyphicons-halflings-regulard41d.html" />
+    <Content Include="css\lib\fullcalendar\fullcalendar.css" />
+    <Content Include="css\lib\fullcalendar\fullcalendar.print.css" />
+    <Content Include="css\lib\iCheck\all.css" />
+    <Content Include="css\lib\iCheck\flat\aero%402x.png" />
+    <Content Include="css\lib\iCheck\flat\aero.png" />
+    <Content Include="css\lib\iCheck\flat\blue%402x.png" />
+    <Content Include="css\lib\iCheck\flat\blue.png" />
+    <Content Include="css\lib\iCheck\flat\flat%402x.png" />
+    <Content Include="css\lib\iCheck\flat\flat.png" />
+    <Content Include="css\lib\iCheck\flat\green%402x.png" />
+    <Content Include="css\lib\iCheck\flat\green.png" />
+    <Content Include="css\lib\iCheck\flat\grey%402x.png" />
+    <Content Include="css\lib\iCheck\flat\grey.png" />
+    <Content Include="css\lib\iCheck\flat\orange%402x.png" />
+    <Content Include="css\lib\iCheck\flat\orange.png" />
+    <Content Include="css\lib\iCheck\flat\pink%402x.png" />
+    <Content Include="css\lib\iCheck\flat\pink.png" />
+    <Content Include="css\lib\iCheck\flat\purple%402x.png" />
+    <Content Include="css\lib\iCheck\flat\purple.png" />
+    <Content Include="css\lib\iCheck\flat\red%402x.png" />
+    <Content Include="css\lib\iCheck\flat\red.png" />
+    <Content Include="css\lib\iCheck\flat\yellow%402x.png" />
+    <Content Include="css\lib\iCheck\flat\yellow.png" />
+    <Content Include="css\lib\iCheck\flat\_all.css" />
+    <Content Include="css\lib\iCheck\futurico\futurico%402x.png" />
+    <Content Include="css\lib\iCheck\futurico\futurico.css" />
+    <Content Include="css\lib\iCheck\futurico\futurico.png" />
+    <Content Include="css\lib\iCheck\line\line%402x.png" />
+    <Content Include="css\lib\iCheck\line\line.png" />
+    <Content Include="css\lib\iCheck\line\_all.css" />
+    <Content Include="css\lib\iCheck\minimal\aero%402x.png" />
+    <Content Include="css\lib\iCheck\minimal\aero.png" />
+    <Content Include="css\lib\iCheck\minimal\blue%402x.png" />
+    <Content Include="css\lib\iCheck\minimal\blue.png" />
+    <Content Include="css\lib\iCheck\minimal\green%402x.png" />
+    <Content Include="css\lib\iCheck\minimal\green.png" />
+    <Content Include="css\lib\iCheck\minimal\grey%402x.png" />
+    <Content Include="css\lib\iCheck\minimal\grey.png" />
+    <Content Include="css\lib\iCheck\minimal\orange%402x.png" />
+    <Content Include="css\lib\iCheck\minimal\orange.png" />
+    <Content Include="css\lib\iCheck\minimal\pink%402x.png" />
+    <Content Include="css\lib\iCheck\minimal\pink.png" />
+    <Content Include="css\lib\iCheck\minimal\purple%402x.png" />
+    <Content Include="css\lib\iCheck\minimal\purple.png" />
+    <Content Include="css\lib\iCheck\minimal\red%402x.png" />
+    <Content Include="css\lib\iCheck\minimal\red.png" />
+    <Content Include="css\lib\iCheck\minimal\yellow%402x.png" />
+    <Content Include="css\lib\iCheck\minimal\yellow.png" />
+    <Content Include="css\lib\iCheck\minimal\_all.css" />
+    <Content Include="css\lib\iCheck\polaris\polaris%402x.png" />
+    <Content Include="css\lib\iCheck\polaris\polaris.css" />
+    <Content Include="css\lib\iCheck\polaris\polaris.png" />
+    <Content Include="css\lib\iCheck\square\aero%402x.png" />
+    <Content Include="css\lib\iCheck\square\aero.png" />
+    <Content Include="css\lib\iCheck\square\blue%402x.png" />
+    <Content Include="css\lib\iCheck\square\blue.png" />
+    <Content Include="css\lib\iCheck\square\green%402x.png" />
+    <Content Include="css\lib\iCheck\square\green.png" />
+    <Content Include="css\lib\iCheck\square\grey%402x.png" />
+    <Content Include="css\lib\iCheck\square\grey.png" />
+    <Content Include="css\lib\iCheck\square\orange%402x.png" />
+    <Content Include="css\lib\iCheck\square\orange.png" />
+    <Content Include="css\lib\iCheck\square\pink%402x.png" />
+    <Content Include="css\lib\iCheck\square\pink.png" />
+    <Content Include="css\lib\iCheck\square\purple%402x.png" />
+    <Content Include="css\lib\iCheck\square\purple.png" />
+    <Content Include="css\lib\iCheck\square\red%402x.png" />
+    <Content Include="css\lib\iCheck\square\red.png" />
+    <Content Include="css\lib\iCheck\square\square%402x.png" />
+    <Content Include="css\lib\iCheck\square\square.png" />
+    <Content Include="css\lib\iCheck\square\yellow%402x.png" />
+    <Content Include="css\lib\iCheck\square\yellow.png" />
+    <Content Include="css\lib\iCheck\square\_all.css" />
+    <Content Include="css\lib\ionicons\ionicons.min.css" />
+    <Content Include="css\lib\jasny\jasny-bootstrap.min.css" />
+    <Content Include="css\lib\jqvmap\jqvmap.css" />
+    <Content Include="css\lib\lists\lists.css" />
+    <Content Include="css\lib\morris\morris-0.4.3.min.css" />
+    <Content Include="css\lib\perfectscrollbar\perfect-scrollbar.css" />
+    <Content Include="css\lib\slider\slider.css" />
+    <Content Include="css\lib\summernote\summernote-bs3.css" />
+    <Content Include="css\lib\summernote\summernote.css" />
+    <Content Include="css\lib\tabdrop\tabdrop.css" />
+    <Content Include="css\lib\timeline\timeline.css" />
+    <Content Include="css\lib\timepicker\bootstrap-timepicker.min.css" />
+    <Content Include="css\lib\treeview\treeview.css" />
+    <Content Include="css\styles.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.html" />
+    <Content Include="images\21.jpg" />
+    <Content Include="images\56.jpg" />
+    <Content Include="images\59.jpg" />
+    <Content Include="images\87.jpg" />
+    <Content Include="images\about.2.jpg" />
+    <Content Include="images\admin_link.jpg" />
+    <Content Include="images\app.jpg" />
+    <Content Include="images\devices.png" />
+    <Content Include="images\front_link.jpg" />
+    <Content Include="images\home_img1.jpg" />
+    <Content Include="images\image1.jpg" />
+    <Content Include="images\image2.jpg" />
+    <Content Include="images\image3.jpg" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\logo_white.fw.png" />
+    <Content Include="images\pattern_1x.jpg" />
+    <Content Include="images\profile_bg.jpg" />
+    <Content Include="images\sample_pages.jpg" />
+    <Content Include="images\user1.png" />
+    <Content Include="images\user2.png" />
+    <Content Include="images\user3.png" />
+    <Content Include="images\user4.png" />
+    <Content Include="images\user5.png" />
+    <Content Include="page_about.html" />
+    <Content Include="page_contact.html" />
+    <Content Include="page_faq.html" />
+    <Content Include="page_notifications.html" />
+    <Content Include="page_pricing.html" />
+    <Content Include="scripts\additional-methods.min.js" />
+    <Content Include="scripts\angular-animate.js" />
+    <Content Include="scripts\angular-cookies.min.js" />
+    <Content Include="scripts\angular-file-upload.js" />
+    <Content Include="scripts\angular-growl.min.js" />
+    <Content Include="scripts\angular-local-storage.min.js" />
+    <Content Include="scripts\angular-mocks.js" />
+    <Content Include="scripts\angular-moment.min.js" />
+    <Content Include="scripts\angular-resource.js" />
+    <Content Include="scripts\angular-route.js" />
+    <Content Include="scripts\angular-sanitize.js" />
+    <Content Include="scripts\angular-sanitize.min.js" />
+    <Content Include="scripts\angular-toastr.tpls.min.js" />
+    <Content Include="scripts\angular-touch.min.js" />
+    <Content Include="scripts\angular-ui-router.min.js" />
+    <Content Include="scripts\angular-validate.min.js" />
+    <Content Include="scripts\angular.js" />
+    <Content Include="scripts\angular.min.js" />
+    <Content Include="scripts\Angular\LoginModule\app.js" />
+    <Content Include="scripts\Angular\LoginModule\Controllers\loginController.js" />
+    <Content Include="scripts\Angular\LoginModule\Services\AuthData.js" />
+    <Content Include="scripts\Angular\LoginModule\Services\AuthenticationService.js" />
+    <Content Include="scripts\Angular\LoginModule\Services\loginService.js" />
+    <Content Include="scripts\bootstrap-datetimepicker.min.js" />
+    <Content Include="scripts\angular.min.js.map" />
+    <None Include="scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="scripts\jquery.validate.min.js" />
+    <Content Include="scripts\lib\bootstrapvalidator\bootstrapValidator.min.js" />
+    <Content Include="scripts\lib\bootstrap\bootstrap.min.js" />
+    <Content Include="scripts\lib\bootstrap_growl\bootstrap-growl.min.js" />
+    <Content Include="scripts\lib\bootstrap_tour\bootstrap-tour.min.js" />
+    <Content Include="scripts\lib\c3\c3.js" />
+    <Content Include="scripts\lib\c3\d3.v3.min.js" />
+    <Content Include="scripts\lib\ckeditor\ckeditor.js" />
+    <Content Include="scripts\lib\clockpicker\clockpicker.js" />
+    <Content Include="scripts\lib\datatables\datatables.js" />
+    <Content Include="scripts\lib\datatables\jquery.dataTables.min.js" />
+    <Content Include="scripts\lib\daterangepicker\daterangepicker.js" />
+    <Content Include="scripts\lib\flot\jquery.flot.js" />
+    <Content Include="scripts\lib\flot\jquery.flot.pie.min.js" />
+    <Content Include="scripts\lib\flot\jquery.flot.resize.js" />
+    <Content Include="scripts\lib\flot\jquery.flot.stack.js" />
+    <Content Include="scripts\lib\flot\jquery.flot.time.js" />
+    <Content Include="scripts\lib\flot\jquery.flot.tooltip.js" />
+    <Content Include="scripts\lib\fullcalendar\fullcalendar.js" />
+    <Content Include="scripts\lib\gaugejs\gauge.min.js" />
+    <Content Include="scripts\lib\gmaps\gmaps.js" />
+    <Content Include="scripts\lib\icheck\icheck.min.js" />
+    <Content Include="scripts\lib\jasny\jasny-bootstrap.min.js" />
+    <Content Include="scripts\lib\jquery\jquery-1.10.2.min.js" />
+    <Content Include="scripts\lib\jquery\jquery-ui.custom.min.js" />
+    <Content Include="scripts\lib\jqvmap\data\jquery.vmap.sampledata.js" />
+    <Content Include="scripts\lib\jqvmap\jquery.vmap.js" />
+    <Content Include="scripts\lib\jqvmap\maps\continents\jquery.vmap.asia.js" />
+    <Content Include="scripts\lib\jqvmap\maps\continents\jquery.vmap.australia.js" />
+    <Content Include="scripts\lib\jqvmap\maps\jquery.vmap.europe.js" />
+    <Content Include="scripts\lib\jqvmap\maps\jquery.vmap.world.js" />
+    <Content Include="scripts\lib\mask\jquery.mask.min.js" />
+    <Content Include="scripts\lib\momentjs\moment.min.js" />
+    <Content Include="scripts\lib\morris\morris.js" />
+    <Content Include="scripts\lib\morris\raphael-min.js" />
+    <Content Include="scripts\lib\nestable\jquery.nestable.js" />
+    <Content Include="scripts\lib\slider\bootstrap-slider.js" />
+    <Content Include="scripts\lib\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="scripts\lib\sparklines\jquery.sparkline.min.js" />
+    <Content Include="scripts\lib\summernote\summernote.min.js" />
+    <Content Include="scripts\lib\tabdrop\bootstrap-tabdrop.js" />
+    <Content Include="scripts\lib\tagsinput\bootstrap-tagsinput.min.js" />
+    <Content Include="scripts\lib\timepicker\bootstrap-timepicker.js" />
+    <Content Include="scripts\loading-bar.js" />
+    <Content Include="scripts\moment.min.js" />
+    <Content Include="scripts\ngSlimscroll.js" />
+    <Content Include="scripts\ocLazyLoad.min.js" />
+    <Content Include="scripts\pages\chart_c3.js" />
+    <Content Include="scripts\pages\chart_flot.js" />
+    <Content Include="scripts\pages\chart_morris.js" />
+    <Content Include="scripts\pages\chart_others.js" />
+    <Content Include="scripts\pages\form_advanced.js" />
+    <Content Include="scripts\pages\form_validation.js" />
+    <Content Include="scripts\pages\front_end.js" />
+    <Content Include="scripts\pages\index_1.js" />
+    <Content Include="scripts\pages\index_2.js" />
+    <Content Include="scripts\pages\map_google.js" />
+    <Content Include="scripts\pages\map_vector.js" />
+    <Content Include="scripts\pages\ui_alerts.js" />
+    <Content Include="scripts\pages\ui_calendar.js" />
+    <Content Include="scripts\scripts.min.js" />
+    <Content Include="scripts\sweetalert.min.js" />
+    <Content Include="scripts\trNgGrid.js" />
+    <Content Include="scripts\ui-bootstrap-tpls.min.js" />
+    <Content Include="scripts\xeditable.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="AuthorizationServerProvider.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="fonts\font-awesome\" />
+    <Folder Include="fonts\glyphicons\" />
+    <Folder Include="fonts\ionicons\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataModel\DataModel.csproj">
+      <Project>{62ca0fb2-f567-4a23-8838-7198b411a81b}</Project>
+      <Name>DataModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62160</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62160/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

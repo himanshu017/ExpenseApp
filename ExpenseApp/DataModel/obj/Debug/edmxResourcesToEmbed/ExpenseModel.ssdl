@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ExpenseAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CategoryMaster">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="ModifiedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="CountryMaster">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="ShortCode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CurrenyMaster">
+    <Key>
+      <PropertyRef Name="CurrencyID" />
+    </Key>
+    <Property Name="CurrencyID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ISO" Type="char" MaxLength="3" />
+    <Property Name="Symbol" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TransactionsMaster">
+    <Key>
+      <PropertyRef Name="ExpenseID" />
+    </Key>
+    <Property Name="ExpenseID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="bigint" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="money" Nullable="false" />
+    <Property Name="SpendingDate" Type="datetime" />
+    <Property Name="CurrencyID" Type="smallint" />
+    <Property Name="Comments" Type="nvarchar" MaxLength="200" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UserLoginActivityMaster">
+    <Key>
+      <PropertyRef Name="ActivityID" />
+    </Key>
+    <Property Name="ActivityID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="bigint" Nullable="false" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UserMaster">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserTypeID" Type="tinyint" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="DOB" Type="date" Nullable="false" />
+    <Property Name="Country" Type="smallint" />
+    <Property Name="PasswordHash" Type="nvarchar" MaxLength="100" />
+    <Property Name="PasswordSalt" Type="nvarchar" MaxLength="50" />
+    <Property Name="DefaultCurrency" Type="smallint" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsPro" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="UserTypeMaster">
+    <Key>
+      <PropertyRef Name="UserTypeID" />
+    </Key>
+    <Property Name="UserTypeID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Role" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="ModifiedBy" Type="bigint" />
+  </EntityType>
+  <Association Name="FK_CategoryMaster_UserMaster">
+    <End Role="UserMaster" Type="Self.UserMaster" Multiplicity="0..1" />
+    <End Role="CategoryMaster" Type="Self.CategoryMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMaster">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="CategoryMaster">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransactionsMaster_CategoryMaster">
+    <End Role="CategoryMaster" Type="Self.CategoryMaster" Multiplicity="1" />
+    <End Role="TransactionsMaster" Type="Self.TransactionsMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMaster">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="TransactionsMaster">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransactionsMaster_CurrenyMaster">
+    <End Role="CurrenyMaster" Type="Self.CurrenyMaster" Multiplicity="0..1" />
+    <End Role="TransactionsMaster" Type="Self.TransactionsMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CurrenyMaster">
+        <PropertyRef Name="CurrencyID" />
+      </Principal>
+      <Dependent Role="TransactionsMaster">
+        <PropertyRef Name="CurrencyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransactionsMaster_UserMaster">
+    <End Role="UserMaster" Type="Self.UserMaster" Multiplicity="0..1" />
+    <End Role="TransactionsMaster" Type="Self.TransactionsMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMaster">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="TransactionsMaster">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserLoginActivityMaster_UserMaster">
+    <End Role="UserMaster" Type="Self.UserMaster" Multiplicity="1" />
+    <End Role="UserLoginActivityMaster" Type="Self.UserLoginActivityMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMaster">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserLoginActivityMaster">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserMaster_CountryMaster">
+    <End Role="CountryMaster" Type="Self.CountryMaster" Multiplicity="0..1" />
+    <End Role="UserMaster" Type="Self.UserMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CountryMaster">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="UserMaster">
+        <PropertyRef Name="Country" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserMaster_CurrenyMaster">
+    <End Role="CurrenyMaster" Type="Self.CurrenyMaster" Multiplicity="0..1" />
+    <End Role="UserMaster" Type="Self.UserMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CurrenyMaster">
+        <PropertyRef Name="CurrencyID" />
+      </Principal>
+      <Dependent Role="UserMaster">
+        <PropertyRef Name="DefaultCurrency" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserMaster_UserTypeMaster">
+    <End Role="UserTypeMaster" Type="Self.UserTypeMaster" Multiplicity="1" />
+    <End Role="UserMaster" Type="Self.UserMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTypeMaster">
+        <PropertyRef Name="UserTypeID" />
+      </Principal>
+      <Dependent Role="UserMaster">
+        <PropertyRef Name="UserTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserTypeMaster_UserMaster">
+    <End Role="UserMaster" Type="Self.UserMaster" Multiplicity="0..1" />
+    <End Role="UserTypeMaster" Type="Self.UserTypeMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserMaster">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserTypeMaster">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ExpenseAppModelStoreContainer">
+    <EntitySet Name="CategoryMaster" EntityType="Self.CategoryMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CountryMaster" EntityType="Self.CountryMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CurrenyMaster" EntityType="Self.CurrenyMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TransactionsMaster" EntityType="Self.TransactionsMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserLoginActivityMaster" EntityType="Self.UserLoginActivityMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserMaster" EntityType="Self.UserMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserTypeMaster" EntityType="Self.UserTypeMaster" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CategoryMaster_UserMaster" Association="Self.FK_CategoryMaster_UserMaster">
+      <End Role="UserMaster" EntitySet="UserMaster" />
+      <End Role="CategoryMaster" EntitySet="CategoryMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransactionsMaster_CategoryMaster" Association="Self.FK_TransactionsMaster_CategoryMaster">
+      <End Role="CategoryMaster" EntitySet="CategoryMaster" />
+      <End Role="TransactionsMaster" EntitySet="TransactionsMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransactionsMaster_CurrenyMaster" Association="Self.FK_TransactionsMaster_CurrenyMaster">
+      <End Role="CurrenyMaster" EntitySet="CurrenyMaster" />
+      <End Role="TransactionsMaster" EntitySet="TransactionsMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransactionsMaster_UserMaster" Association="Self.FK_TransactionsMaster_UserMaster">
+      <End Role="UserMaster" EntitySet="UserMaster" />
+      <End Role="TransactionsMaster" EntitySet="TransactionsMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserLoginActivityMaster_UserMaster" Association="Self.FK_UserLoginActivityMaster_UserMaster">
+      <End Role="UserMaster" EntitySet="UserMaster" />
+      <End Role="UserLoginActivityMaster" EntitySet="UserLoginActivityMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserMaster_CountryMaster" Association="Self.FK_UserMaster_CountryMaster">
+      <End Role="CountryMaster" EntitySet="CountryMaster" />
+      <End Role="UserMaster" EntitySet="UserMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserMaster_CurrenyMaster" Association="Self.FK_UserMaster_CurrenyMaster">
+      <End Role="CurrenyMaster" EntitySet="CurrenyMaster" />
+      <End Role="UserMaster" EntitySet="UserMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserMaster_UserTypeMaster" Association="Self.FK_UserMaster_UserTypeMaster">
+      <End Role="UserTypeMaster" EntitySet="UserTypeMaster" />
+      <End Role="UserMaster" EntitySet="UserMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserTypeMaster_UserMaster" Association="Self.FK_UserTypeMaster_UserMaster">
+      <End Role="UserMaster" EntitySet="UserMaster" />
+      <End Role="UserTypeMaster" EntitySet="UserTypeMaster" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
