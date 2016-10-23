@@ -28,9 +28,9 @@ namespace DataModel
         public virtual DbSet<CategoryMaster> CategoryMasters { get; set; }
         public virtual DbSet<TransactionsMaster> TransactionsMasters { get; set; }
         public virtual DbSet<UserLoginActivityMaster> UserLoginActivityMasters { get; set; }
-        public virtual DbSet<UserMaster> UserMasters { get; set; }
         public virtual DbSet<UserTypeMaster> UserTypeMasters { get; set; }
         public virtual DbSet<CountryMaster> CountryMasters { get; set; }
         public virtual DbSet<CurrenyMaster> CurrenyMasters { get; set; }
+        public virtual DbSet<UserMaster> UserMasters { get; set; }
     }
 }

@@ -25,7 +25,7 @@ namespace DataModel
         public Nullable<System.DateTime> ModifiedDate { get; set; }
     
         public virtual CategoryMaster CategoryMaster { get; set; }
-        public virtual UserMaster UserMaster { get; set; }
         public virtual CurrenyMaster CurrenyMaster { get; set; }
+        public virtual UserMaster UserMaster { get; set; }
     }
 }

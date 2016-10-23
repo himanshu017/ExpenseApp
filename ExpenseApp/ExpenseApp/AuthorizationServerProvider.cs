@@ -42,7 +42,7 @@ namespace ExpenseApp
                         if (ENCDEC.ComputeHash(context.Password, "MD5", saltBytes) == userInfo.PasswordHash)
                         {
                             var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-                            identity.AddClaim(new Claim(ClaimTypes.Name, userInfo.FirstName));
+                            identity.AddClaim(new Claim(ClaimTypes.Name, userInfo.UserName));
                             identity.AddClaim(new Claim(ClaimTypes.Role, userInfo.UserTypeMaster.Description));
                             identity.AddClaim(new Claim(ClaimTypes.Email, userInfo.Email));
                             identity.AddClaim(new Claim("UserID", userInfo.UserID.ToString()));
@@ -51,7 +51,7 @@ namespace ExpenseApp
                             var props = new AuthenticationProperties(new Dictionary<string, string>
                                     {
                                         {
-                                            "userName", userInfo.FirstName
+                                            "userName", userInfo.UserName
                                         },
                                         {
                                             "role",userInfo.UserTypeMaster.Description

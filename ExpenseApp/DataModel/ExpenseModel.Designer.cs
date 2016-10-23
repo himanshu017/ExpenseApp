@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Projects\Working\ExpenseApp\DataModel\ExpenseModel.edmx'. 
+﻿// T4 code generation is enabled for model 'F:\Github\ExpenseApp\ExpenseApp\DataModel\ExpenseModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

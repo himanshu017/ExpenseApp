@@ -173,3 +173,5 @@ F:\Github\ExpenseApp\ExpenseApp\ExpenseApp\bin\System.Web.Http.WebHost.xml
 F:\Github\ExpenseApp\ExpenseApp\ExpenseApp\obj\Debug\ExpenseApp.csprojResolveAssemblyReference.cache
 F:\Github\ExpenseApp\ExpenseApp\ExpenseApp\obj\Debug\ExpenseApp.dll
 F:\Github\ExpenseApp\ExpenseApp\ExpenseApp\obj\Debug\ExpenseApp.pdb
+F:\Github\ExpenseApp\ExpenseApp\ExpenseApp\bin\AutoMapper.dll
+F:\Github\ExpenseApp\ExpenseApp\ExpenseApp\bin\AutoMapper.xml

@@ -43,6 +43,8 @@ namespace DataModel
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CategoryMaster> CategoryMasters { get; set; }
+        public virtual CountryMaster CountryMaster { get; set; }
+        public virtual CurrenyMaster CurrenyMaster { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TransactionsMaster> TransactionsMasters { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -50,7 +52,5 @@ namespace DataModel
         public virtual UserTypeMaster UserTypeMaster { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserTypeMaster> UserTypeMasters { get; set; }
-        public virtual CountryMaster CountryMaster { get; set; }
-        public virtual CurrenyMaster CurrenyMaster { get; set; }
     }
 }
