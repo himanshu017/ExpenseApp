@@ -248,7 +248,7 @@
     <Content Include="css\lib\treeview\treeview.css" />
     <Content Include="css\styles.css" />
     <Content Include="Global.asax" />
-    <Content Include="Home.html" />
+    <Content Include="Index.html" />
     <Content Include="images\21.jpg" />
     <Content Include="images\56.jpg" />
     <Content Include="images\59.jpg" />
@@ -272,11 +272,15 @@
     <Content Include="images\user3.png" />
     <Content Include="images\user4.png" />
     <Content Include="images\user5.png" />
-    <Content Include="page_about.html" />
-    <Content Include="page_contact.html" />
-    <Content Include="page_faq.html" />
+    <Content Include="scripts\Angular\FrontEnd\Controllers\about.js" />
+    <Content Include="scripts\Angular\FrontEnd\Controllers\contact.js" />
+    <Content Include="scripts\Angular\FrontEnd\Controllers\home.js" />
+    <Content Include="scripts\Angular\FrontEnd\Controllers\pricing.js" />
+    <Content Include="Views\FrontEnd\Home.html" />
+    <Content Include="Views\FrontEnd\AboutUs.html" />
+    <Content Include="Views\FrontEnd\Contact.html" />
     <Content Include="page_notifications.html" />
-    <Content Include="page_pricing.html" />
+    <Content Include="Views\FrontEnd\Pricing.html" />
     <Content Include="scripts\additional-methods.min.js" />
     <Content Include="scripts\angular-animate.js" />
     <Content Include="scripts\angular-cookies.min.js" />
@@ -295,6 +299,8 @@
     <Content Include="scripts\angular-validate.min.js" />
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\angular.min.js" />
+    <Content Include="scripts\Angular\AdminModule\app.js" />
+    <Content Include="scripts\Angular\FrontEnd\app.js" />
     <Content Include="scripts\Angular\LoginModule\app.js" />
     <Content Include="scripts\Angular\LoginModule\Controllers\loginController.js" />
     <Content Include="scripts\Angular\LoginModule\Services\AuthData.js" />
@@ -368,6 +374,7 @@
     <Content Include="scripts\trNgGrid.js" />
     <Content Include="scripts\ui-bootstrap-tpls.min.js" />
     <Content Include="scripts\xeditable.min.js" />
+    <Content Include="Views\FrontEnd\Topnav.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -395,6 +402,8 @@
     <Folder Include="fonts\glyphicons\" />
     <Folder Include="fonts\ionicons\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\UserDashboard\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataModel\DataModel.csproj">

@@ -16,7 +16,7 @@
         "localUrl": "http://localhost:62160/",
         //"liveUrl": "http://localhost:62160/"
     })
-
+    
     .config(['$httpProvider', 'toastrConfig', '$validatorProvider', function ($httpProvider, toastrConfig, $validatorProvider) {
 
         //Defaults for tostr notifications
@@ -47,8 +47,8 @@
             }
         });
 
+        //Http intercepters for Authentication
         $httpProvider.interceptors.push(function ($q, $rootScope, $window, $location) {
-
              return {
                  request: function (config) {
                      return config;
