@@ -1,0 +1,147 @@
+﻿<section class="page-header-section bg-primary">
+
+    @Html.Partial("~/Views/Shared/_Header.cshtml")
+
+    <div class="container container-padded text-white">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h2 class="text-center">Hello there!</h2>
+                <p class="lead text-center">Lets get talking.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page-section">
+    <div class="container container-padded">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel panel-default">
+                    <div class="panel-body panel-body-fw panel-body-top-br">
+                        <div id="gmap_marker" class="gmaps"></div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-sm-6">
+                            <div class="panel panel-plain m-bot0">
+                                <div class="panel-body panel-body-lg">
+                                    <form role="form" id="contact-form">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control" rows="4" name="message" id="message" placeholder="Message"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="1" name="newsletter" id="newsletter" checked="" style="float: none;">
+                                                    Also sign me up for the newsletter
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group m-bot0">
+                                            <a class="btn btn-primary btn-block">Send message</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="panel panel-plain m-bot0">
+                                <div class="panel-body panel-body-lg">
+                                    <table class="table table-no-border">
+                                        <tbody>
+                                            <tr>
+                                                <td class="pull-right"><i class="fa fa-map-marker text-muted"></i></td>
+                                                <td>
+                                                    <strong>Proctor, Inc.</strong><br>
+                                                    0 Solar System, Suite 001<br>
+                                                    Galaxy, UV 94107
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="pull-right"><i class="fa fa-phone text-muted"></i></td>
+                                                <td>(123) 456-7890</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="pull-right"><i class="fa fa-envelope text-muted"></i></td>
+                                                <td><a>info@proctor.inc</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <hr>
+                                                    <ul class="list-inline">
+                                                        <li><a><i class="ion ion-social-twitter fa-lg"></i></a></li>
+                                                        <li><a><i class="ion ion-social-facebook fa-lg"></i></a></li>
+                                                        <li><a><i class="ion ion-social-linkedin fa-lg"></i></a></li>
+                                                        <li><a><i class="ion ion-social-googleplus fa-lg"></i></a></li>
+                                                        <li><a><i class="ion ion-social-dribbble fa-lg"></i></a></li>
+                                                        <li><a><i class="ion ion-social-github fa-lg"></i></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts{
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyAB-MynyCKWeOAOWNwCIwb1WfflbJFvrvc" type="text/javascript"></script>
+    @Scripts.Render("~/bundles/Gmaps")
+
+    <script type="text/javascript">
+        var GoogleMaps = function () {
+            var mapMarker = function () {
+                var isDraggable = $(document).width() > 480 ? true : false;
+                var map = new GMaps({
+                    div: '#gmap_marker',
+                    lat: -12.043333,
+                    lng: -77.028333,
+                    draggable: isDraggable,
+                    scrollwheel: false,
+                });
+                map.addMarker({
+                    lat: -12.043333,
+                    lng: -77.03,
+                    title: 'Lima',
+                    details: {
+                        database_id: 42,
+                        author: 'HPNeo'
+                    },
+                    click: function (e) {
+                        if (console.log) console.log(e);
+                        alert('You clicked in this marker');
+                    }
+                });
+                map.addMarker({
+                    lat: -12.042,
+                    lng: -77.028333,
+                    title: 'Marker with InfoWindow',
+                    infoWindow: {
+                        content: 'HTML Content!!!!'
+                    }
+                });
+            }
+            return {
+                //main function to initiate map samples
+                init: function () {
+                    mapMarker();
+                }
+            };
+        }();
+        $(document).ready(function () {
+            GoogleMaps.init();
+        });
+    </script>
+}

@@ -35,7 +35,10 @@
 
                     }
                     else if (response.UserID > 0) {
+
                         toastr.success('User Authenticated.', 'Success!');
+
+                        window.location.href = 'http://localhost:62160/#/Dashboard';
                     }
                     lc.loginData = {
                         userName: "",

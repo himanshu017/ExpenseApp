@@ -272,10 +272,13 @@
     <Content Include="images\user3.png" />
     <Content Include="images\user4.png" />
     <Content Include="images\user5.png" />
+    <Content Include="scripts\Angular\AdminModule\Controllers\dashboard.js" />
     <Content Include="scripts\Angular\FrontEnd\Controllers\about.js" />
     <Content Include="scripts\Angular\FrontEnd\Controllers\contact.js" />
     <Content Include="scripts\Angular\FrontEnd\Controllers\home.js" />
     <Content Include="scripts\Angular\FrontEnd\Controllers\pricing.js" />
+    <Content Include="Views\Admin\Master.html" />
+    <Content Include="Views\Admin\Sub\Dashboard.html" />
     <Content Include="Views\FrontEnd\Home.html" />
     <Content Include="Views\FrontEnd\AboutUs.html" />
     <Content Include="Views\FrontEnd\Contact.html" />
@@ -402,7 +405,6 @@
     <Folder Include="fonts\glyphicons\" />
     <Folder Include="fonts\ionicons\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Admin\" />
     <Folder Include="Views\UserDashboard\" />
   </ItemGroup>
   <ItemGroup>

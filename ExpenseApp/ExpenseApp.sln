@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModel", "DataModel\DataModel.csproj", "{62CA0FB2-F567-4A23-8838-7198B411A81B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseApp", "ExpenseApp\ExpenseApp.csproj", "{FF1BDC7C-2917-47F3-BF94-049B022FC4F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expenses", "Expenses\Expenses.csproj", "{34D8B49D-1DDA-44CA-8C5B-1D57EBF8EEF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{FF1BDC7C-2917-47F3-BF94-049B022FC4F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF1BDC7C-2917-47F3-BF94-049B022FC4F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF1BDC7C-2917-47F3-BF94-049B022FC4F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34D8B49D-1DDA-44CA-8C5B-1D57EBF8EEF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34D8B49D-1DDA-44CA-8C5B-1D57EBF8EEF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34D8B49D-1DDA-44CA-8C5B-1D57EBF8EEF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34D8B49D-1DDA-44CA-8C5B-1D57EBF8EEF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

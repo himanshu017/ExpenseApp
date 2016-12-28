@@ -82,6 +82,7 @@
     <Compile Include="CurrenyMaster.cs">
       <DependentUpon>ExpenseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\UserManager.cs" />
     <Compile Include="ExpenseModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
