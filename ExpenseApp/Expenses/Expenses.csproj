@@ -134,10 +134,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\SuperAdmin\Models\" />
     <Folder Include="Content\lib\" />
     <Folder Include="fonts\font-awesome\" />
     <Folder Include="fonts\glyphicons\" />
     <Folder Include="fonts\ionicons\" />
+    <Folder Include="Models\" />
     <Folder Include="Scripts\lib\" />
     <Folder Include="Scripts\pages\" />
   </ItemGroup>
@@ -174,14 +176,17 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Areas\SuperAdmin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\SuperAdmin\SuperAdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AuthorizationRoles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\AuthorizeRoleAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -220,6 +225,15 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Areas\SuperAdmin\Views\web.config" />
+    <Content Include="Areas\SuperAdmin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SuperAdmin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\SuperAdmin\Views\Admin\Dashboard.cshtml" />
+    <Content Include="Areas\SuperAdmin\Views\Admin\ManageCategory.cshtml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="images\21.jpg" />
     <Content Include="images\56.jpg" />
@@ -254,6 +268,7 @@
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
@@ -279,7 +294,8 @@
     <Content Include="Views\Home\ContactUs.cshtml" />
     <Content Include="Views\Home\Pricing.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Auth\Login.cshtml" />
+    <Content Include="Views\Home\Unauthorized.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataModel\DataModel.csproj">

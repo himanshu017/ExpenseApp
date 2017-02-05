@@ -36,13 +36,39 @@ namespace Expenses
                 "~/scripts/pages/scripts.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/Gmaps").Include(
-        
+
                "~/scripts/lib/gmaps/gmaps.js",
                "~/scripts/pages/map_google.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/validation").Include(
             "~/scripts/jquery.validate.min.js",
             "~/scripts/additional-methods.min.js"));
+
+            bundles.Add(new StyleBundle("~/Content/AdminCSS").Include(
+                    "~/content/lib/daterangepicker/daterangepicker-bs3.css",
+                    "~/content/lib/jqvmap/jqvmap.css",
+                    "~/content/lib/tabdrop/tabdrop.css"
+                   ));
+
+            bundles.Add(new ScriptBundle("~/bundles/Admin").Include(
+                  "~/scripts/pages/front_end.js",
+                  "~/scripts/lib/slimscroll/jquery.slimscroll.min.js",
+                  "~/scripts/lib/momentjs/moment.min.js",
+                  "~/scripts/lib/daterangepicker/daterangepicker.js",
+                  "~/scripts/lib/tabdrop/bootstrap-tabdrop.js",
+                  "~/scripts/lib/flot/jquery.flot.js",
+                  "~/scripts/lib/flot/jquery.flot.tooltip.js",
+                  "~/scripts/lib/flot/jquery.flot.resize.js",
+                  "~/scripts/lib/flot/jquery.flot.pie.min.js",
+                  "~/scripts/lib/flot/jquery.flot.stack.js",
+                  "~/scripts/lib/jqvmap/jquery.vmap.js",
+                  "~/scripts/lib/jqvmap/maps/jquery.vmap.world.js",
+                  "~/scripts/lib/jqvmap/data/jquery.vmap.sampledata.js",
+                  "~/scripts/lib/sparklines/jquery.sparkline.min.js",
+                  "~/scripts/scripts.min.js",
+                  "~/scripts/pages/index_1.js"
+                  ));
+
         }
     }
 }

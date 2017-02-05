@@ -1,0 +1,496 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<div class="main-content-wrapper">
+    <div class="container-fluid container-padded dash-controls">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="pull-right">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <section>
+            <div class="container-fluid container-padded">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-body panel-body-gray panel-body-top-br">
+                                <div class="stat">
+                                    <p class="stat-title"><i class="ion ion-person-stalker"></i> Total Users</p>
+                                    <h3 class="stat-value">623,201</h3>
+                                </div>
+                            </div>
+                            <hr class="small">
+                            <div class="panel-body text-center">
+                                <span class="label label-success-transparent"><i class="fa fa-caret-up"></i> 10%</span> <span id="sparkline1"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-body panel-body-gray panel-body-top-br">
+                                <div class="stat">
+                                    <p class="stat-title"><i class="ion ion-person"></i> New Users</p>
+                                    <h3 class="stat-value">3,875</h3>
+                                </div>
+                            </div>
+                            <hr class="small">
+                            <div class="panel-body text-center">
+                                <span class="label label-success-transparent"><i class="fa fa-caret-up"></i> 8%</span> <span id="sparkline2"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-body panel-body-gray panel-body-top-br">
+                                <div class="stat">
+                                    <p class="stat-title"><i class="fa fa-money"></i> Total Sales</p>
+                                    <h3 class="stat-value">$ 145,231</h3>
+                                </div>
+                            </div>
+                            <hr class="small">
+                            <div class="panel-body text-center">
+                                <span class="label label-danger-transparent"><i class="fa fa-caret-down"></i> 5%</span> <span id="sparkline3"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-body panel-body-gray panel-body-top-br">
+                                <div class="stat">
+                                    <p class="stat-title"><i class="fa fa-download"></i> Downloads</p>
+                                    <h3 class="stat-value">2,897</h3>
+                                </div>
+                            </div>
+                            <hr class="small">
+                            <div class="panel-body text-center">
+                                <span class="label label-success-transparent"><i class="fa fa-caret-up"></i> 18%</span> <span id="sparkline4"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body panel-body-primary panel-body-top-br">
+                                <div class="panel-desc">
+                                    <span class="text-dark"><i class="ion ion-arrow-graph-up-right"></i> Stock market index:</span> <span class="text-primary">36,174</span>
+                                </div>
+                                <div id="site_statistics" style="height:180px;"></div>
+                            </div>
+                            <div class="has-scroll">
+                                <table class="table table-striped table-y-border">
+                                    <thead>
+                                        <tr>
+                                            <th>Code</th>
+                                            <th>Company</th>
+                                            <th class="text-right">Price</th>
+                                            <th class="text-right">Change</th>
+                                            <th class="text-right">Open</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>AAC</td>
+                                            <td>Australian Agricultural Company Limited.</td>
+                                            <td class="text-right">$1.38</td>
+                                            <td class="text-right text-danger"><i class="fa fa-caret-down"></i> -0.01%</td>
+                                            <td class="text-right">$1.39</td>
+                                        </tr>
+                                        <tr>
+                                            <td>AAD</td>
+                                            <td>Ardent Leisure Group</td>
+                                            <td class="text-right">$1.15</td>
+                                            <td class="text-right text-success"><i class="fa fa-caret-up"></i> +0.02%</td>
+                                            <td class="text-right">$1.14</td>
+                                        </tr>
+                                        <tr>
+                                            <td>AAX</td>
+                                            <td>Ausenco Limited</td>
+                                            <td class="text-right">$4.00</td>
+                                            <td class="text-right text-danger"><i class="fa fa-caret-down"></i> -0.04%</td>
+                                            <td class="text-right">$4.01</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ABC</td>
+                                            <td>Adelaide Brighton Limited</td>
+                                            <td class="text-right">$3.00</td>
+                                            <td class="text-right text-success"><i class="fa fa-caret-up"></i> +0.06%</td>
+                                            <td class="text-right">$2.98</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ABP</td>
+                                            <td>Abacus Property Group</td>
+                                            <td class="text-right">$1.91</td>
+                                            <td class="text-right text-success"><i class="fa fa-caret-up"></i> +0.01%</td>
+                                            <td class="text-right">$1.92</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ABY</td>
+                                            <td>Aditya Birla Minerals Limited</td>
+                                            <td class="text-right">$0.77</td>
+                                            <td class="text-right text-danger"><i class="fa fa-caret-down"></i> +0.02%</td>
+                                            <td class="text-right">$0.76</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ACR</td>
+                                            <td>Acrux Limited</td>
+                                            <td class="text-right">$3.71</td>
+                                            <td class="text-right text-success"><i class="fa fa-caret-up"></i> +0.01%</td>
+                                            <td class="text-right">$3.70</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ADU</td>
+                                            <td>Adamus Resources Limited</td>
+                                            <td class="text-right">$0.72</td>
+                                            <td class="text-right text-success"><i class="fa fa-caret-up"></i> 0.01%</td>
+                                            <td class="text-right">$0.73</td>
+                                        </tr>
+                                        <tr>
+                                            <td>AGG</td>
+                                            <td>Anglogold Ashanti LimitED</td>
+                                            <td class="text-right">$7.81</td>
+                                            <td class="text-right text-danger"><i class="fa fa-caret-down"></i> -0.22%</td>
+                                            <td class="text-right">$7.82</td>
+                                        </tr>
+                                        <tr>
+                                            <td>AGK</td>
+                                            <td>Agl Energy Limited</td>
+                                            <td class="text-right">$13.82</td>
+                                            <td class="text-right text-success"><i class="fa fa-caret-up"></i> 0.02%</td>
+                                            <td class="text-right">$13.83</td>
+                                        </tr>
+                                        <tr>
+                                            <td>AGO</td>
+                                            <td>Atlas Iron Limited</td>
+                                            <td class="text-right">$3.17</td>
+                                            <td class="text-right text-danger"><i class="fa fa-caret-down"></i> -0.02%</td>
+                                            <td class="text-right">$3.11</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="panel panel-default">
+                            <div class="panel-body panel-body-primary panel-body-top-br">
+                                <div class="panel-desc"><i class="ion ion-earth"></i> Visitor Map</div>
+                                <div id="world-vmap" style="height: 250px;"></div>
+                            </div>
+                            <div class="has-scroll">
+                                <table class="table table-striped table-y-border">
+                                    <thead>
+                                        <tr>
+                                            <th>Country</th>
+                                            <th class="text-right">Visitors</th>
+                                            <th class="text-right">Online</th>
+                                            <th class="text-right">Page Views</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="#">USA</a></td>
+                                            <td class="text-right"><div id="sparkline-1"></div></td>
+                                            <td class="text-right">209</td>
+                                            <td class="text-right">239</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">India</a></td>
+                                            <td class="text-right"><div id="sparkline-2"></div></td>
+                                            <td class="text-right">131</td>
+                                            <td class="text-right">958</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">Britain</a></td>
+                                            <td class="text-right"><div id="sparkline-3"></div></td>
+                                            <td class="text-right">19</td>
+                                            <td class="text-right">417</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">Brazil</a></td>
+                                            <td class="text-right"><div id="sparkline-4"></div></td>
+                                            <td class="text-right">109</td>
+                                            <td class="text-right">476</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">China</a></td>
+                                            <td class="text-right"><div id="sparkline-5"></div></td>
+                                            <td class="text-right">192</td>
+                                            <td class="text-right">437</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">Australia</a></td>
+                                            <td class="text-right"><div id="sparkline-6"></div></td>
+                                            <td class="text-right">1709</td>
+                                            <td class="text-right">947</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">Bahamas</a></td>
+                                            <td class="text-right"><div id="sparkline-7"></div></td>
+                                            <td class="text-right">131</td>
+                                            <td class="text-right">958</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">Algeria</a></td>
+                                            <td class="text-right"><div id="sparkline-8"></div></td>
+                                            <td class="text-right">19</td>
+                                            <td class="text-right">417</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">Ghana</a></td>
+                                            <td class="text-right"><div id="sparkline-9"></div></td>
+                                            <td class="text-right">109</td>
+                                            <td class="text-right">476</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">Uganda</a></td>
+                                            <td class="text-right"><div id="sparkline-10"></div></td>
+                                            <td class="text-right">192</td>
+                                            <td class="text-right">437</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">Austria</a></td>
+                                            <td class="text-right"><div id="sparkline-11"></div></td>
+                                            <td class="text-right">1709</td>
+                                            <td class="text-right">947</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="panel panel-default text-center">
+                                    <div class="panel-body panel-body-success panel-body-top-br">
+                                        <div class="stat">
+                                            <p class="stat-title"><i class="ion ion-person-stalker"></i> Total Visitors</p>
+                                            <h3 class="stat-value">4,786</h3>
+                                        </div>
+                                    </div>
+                                    <hr class="small">
+                                    <div class="panel-body panel-body-fw">
+                                        <div class="container-fluid container-fw">
+                                            <div class="col-xs-6 panel-cell-padded">
+                                                <div class="stat-value-sm">1,546</div>
+                                                <p class="stat-title">New</p>
+                                            </div>
+                                            <div class="col-xs-6 panel-cell-padded border-l">
+                                                <div class="stat-value-sm">2,547</div>
+                                                <p class="stat-title">Returning</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="panel panel-default text-center">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"><i class="ion ion-chatboxes"></i> Comments</h3>
+                                    </div>
+                                    <div class="panel-body panel-body-fw">
+                                        <div class="container-fluid container-fw">
+                                            <div class="col-xs-6 panel-cell-padded">
+                                                <div class="stat-value-sm">800</div>
+                                                <p class="stat-title">Positive</p>
+                                            </div>
+                                            <div class="col-xs-6 panel-cell-padded border-l">
+                                                <div class="stat-value-sm">190</div>
+                                                <p class="stat-title">Negative</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="panel panel-default text-center">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"><i class="ion ion-alert-circled"></i> Issues</h3>
+                                    </div>
+                                    <div class="panel-body panel-body-fw">
+                                        <div class="container-fluid container-fw">
+                                            <div class="col-xs-6 panel-cell-padded text-danger">
+                                                <div class="stat-value-sm">20</div>
+                                                <p class="stat-title">New</p>
+                                            </div>
+                                            <div class="col-xs-6 panel-cell-padded text-success border-l">
+                                                <div class="stat-value-sm">50</div>
+                                                <p class="stat-title">Resolved</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-body panel-body-success panel-body-top-br">
+                                <div class="panel-desc"><i class="ion ion-android-sort"></i> Top 5 Products</div>
+                                <div id="donut-example" style="height: 180px; width: 100%;"></div>
+                            </div>
+                            <table class="table table-striped table-y-border m-bot0">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th class="text-right">Price</th>
+                                        <th class="text-right">Sales</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>AAC</td>
+                                        <td class="text-right">$ 24.99</td>
+                                        <td class="text-right">
+                                            $ 100,000.00
+                                            <div class="progress progress-xs m-bot0">
+                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>AAD</td>
+                                        <td class="text-right">$ 44.99</td>
+                                        <td class="text-right">
+                                            $ 90,000.00
+                                            <div class="progress progress-xs m-bot0">
+                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>AAX</td>
+                                        <td class="text-right">$ 29.99</td>
+                                        <td class="text-right">
+                                            $ 80,000.00
+                                            <div class="progress progress-xs m-bot0">
+                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>ABC</td>
+                                        <td class="text-right">$ 99.99</td>
+                                        <td class="text-right">
+                                            $ 70,000.00
+                                            <div class="progress progress-xs m-bot0">
+                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>ABP</td>
+                                        <td class="text-right">$ 9.99</td>
+                                        <td class="text-right">
+                                            $ 60,000.00
+                                            <div class="progress progress-xs m-bot0">
+                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-body panel-body-warning panel-body-top-br">
+                                <div class="panel-desc"><i class="ion ion-speedometer"></i> Server Monitor</div>
+                                <div id="bar-example" style="height:180px;"></div>
+                            </div>
+                            <div>
+                                <table class="table table-striped table-y-border">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th class="text-right">C.P.U</th>
+                                            <th class="text-right">Memory</th>
+                                            <th class="text-right">Disc</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="no-border-x">
+                                        <tr>
+                                            <td style="width:40%;"><i class="fa fa-sitemap"></i> Server load</td>
+                                            <td class="text-right">
+                                                0,2%
+                                                <div class="progress progress-xs m-bot0">
+                                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="text-right">13,2 MB</td>
+                                            <td class="text-right">0,1 MB/s</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fa fa-tasks"></i> Apps</td>
+                                            <td class="text-right">
+                                                0,2%
+                                                <div class="progress progress-xs m-bot0">
+                                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="text-right">13,2 MB</td>
+                                            <td class="text-right">0,1 MB/s</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fa fa-signal"></i> Process</td>
+                                            <td class="text-right">
+                                                0,2%
+                                                <div class="progress progress-xs m-bot0">
+                                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="text-right">13,2 MB</td>
+                                            <td class="text-right">0,1 MB/s</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fa fa-bolt"></i> Wamp Server</td>
+                                            <td class="text-right">
+                                                0,2%
+                                                <div class="progress progress-xs m-bot0">
+                                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="text-right">13,2 MB</td>
+                                            <td class="text-right">0,1 MB/s</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fa fa-gear"></i> MySQL Server</td>
+                                            <td class="text-right">
+                                                0,2%
+                                                <div class="progress progress-xs m-bot0">
+                                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="text-right">13,2 MB</td>
+                                            <td class="text-right">0,1 MB/s</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using Expenses.Security;
 
 namespace Expenses.Controllers
 {
@@ -25,7 +26,7 @@ namespace Expenses.Controllers
             return View();
         }
 
-        [Authorize]
+        [AuthorizeRole("User")]
         public ActionResult Pricing()
         {
             return View();
@@ -37,12 +38,12 @@ namespace Expenses.Controllers
             FormsAuthentication.SignOut();
             return View();
         }
-        
-        [HttpPost]
-        public ActionResult Login(UserLoginBO user, string returnUrl)
+
+        [HttpGet]
+        public ActionResult Unauthorized()
         {
-            FormsAuthentication.SetAuthCookie("Test", false);
-            return Json(true);
+            FormsAuthentication.SignOut();
+            return View();
         }
     }
 }

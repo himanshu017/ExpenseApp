@@ -46,3 +46,4 @@ F:\Github\ExpenseApp\ExpenseApp\DataModel\bin\Debug\System.Web.Http.Cors.xml
 F:\Github\ExpenseApp\ExpenseApp\DataModel\obj\Debug\DataModel.csprojResolveAssemblyReference.cache
 F:\Github\ExpenseApp\ExpenseApp\DataModel\obj\Debug\DataModel.dll
 F:\Github\ExpenseApp\ExpenseApp\DataModel\obj\Debug\DataModel.pdb
+F:\Github\ExpenseApp\ExpenseApp\DataModel\bin\Debug\ENCDEC.dll

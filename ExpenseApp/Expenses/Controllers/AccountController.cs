@@ -1,4 +1,5 @@
 ﻿using DataModel;
+using DataModel.BO;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Security.Cryptography;
 using System.Web.Http;
+using System.Web.Security;
 
 namespace Expenses.Controllers
 {
