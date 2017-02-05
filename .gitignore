@@ -48,3 +48,6 @@ Temporary Items
 /ExpenseApp/packages
 /ExpenseApp/Expenses/obj/Debug
 /ExpenseApp/Expenses/bin
+ExpenseApp/ExpenseApp/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+*.cache
+ExpenseApp/DataModel/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
